@@ -1,17 +1,20 @@
-﻿using System;
+﻿/* RustlersRibs.cs
+ * Author: Ethan Davis */
+
+using System;
 using System.Collections.Generic;
 
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// A class representing the RustlersRibs entree
+    /// A class representing the Rustlers Ribs entree
     /// </summary>
-    public class RustlersRibs
+    public class RustlersRibs : Entree
     {
         /// <summary>
         /// The price of the entree
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -22,7 +25,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The calories of the entree
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -33,7 +36,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Special instructions for the preparation of the entree
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

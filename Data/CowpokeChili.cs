@@ -1,4 +1,7 @@
-﻿using System;
+﻿/* CowpokeChilli.cs
+ * Author: Ethan Davis */
+
+using System;
 using System.Collections.Generic;
 
 namespace CowboyCafe.Data
@@ -6,52 +9,12 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A class representing the Cowpoke Chili entree
     /// </summary>
-    public class CowpokeChili
+    public class CowpokeChili : Entree
     {
-        private bool cheese = true;
-        /// <summary>
-        /// If the chili is topped with cheese
-        /// </summary>
-        public bool Cheese
-        {
-            get { return cheese; }
-            set { cheese = value; }
-        }
-
-        private bool sourCream = true;
-        /// <summary>
-        /// If the chili is topped with sour cream
-        /// </summary>
-        public bool SourCream
-        {
-            get { return sourCream; }
-            set { sourCream = value; }
-        }
-
-        private bool greenOnions = true;
-        /// <summary>
-        /// If the chili is topped with green onions
-        /// </summary>
-        public bool GreenOnions
-        {
-            get { return greenOnions; }
-            set { greenOnions = value; }
-        }
-
-        private bool tortillaStrips = true;
-        /// <summary>
-        /// If the chili is topped with tortilla strips
-        /// </summary>
-        public bool TortillaStrips
-        {
-            get { return tortillaStrips; }
-            set { tortillaStrips = value; }
-        }
-
         /// <summary>
         /// The price of the chili
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -62,7 +25,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The calories of the chili
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -71,18 +34,38 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
+        /// If the chili is topped with cheese
+        /// </summary>
+        public bool Cheese { get; set; } = true;
+
+        /// <summary>
+        /// If the chili is topped with sour cream
+        /// </summary>
+        public bool SourCream { get; set; } = true;
+
+        /// <summary>
+        /// If the chili is topped with green onions
+        /// </summary>
+        public bool GreenOnions { get; set; } = true;
+
+        /// <summary>
+        /// If the chili is topped with tortilla strips
+        /// </summary>
+        public bool TortillaStrips { get; set; } = true;
+
+        /// <summary>
         /// Special instructions for the preparation of the chili
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {
                 var instructions = new List<string>();
 
-                if (!cheese) instructions.Add("hold cheese");
-                if (!sourCream) instructions.Add("hold sour cream");
-                if (!greenOnions) instructions.Add("hold green onions");
-                if (!tortillaStrips) instructions.Add("hold tortilla strips");
+                if (!Cheese) instructions.Add("hold cheese");
+                if (!SourCream) instructions.Add("hold sour cream");
+                if (!GreenOnions) instructions.Add("hold green onions");
+                if (!TortillaStrips) instructions.Add("hold tortilla strips");
 
                 return instructions;
             }
