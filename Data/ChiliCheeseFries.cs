@@ -6,7 +6,7 @@ using System;
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// Class representing the Chilli Cheese Fries side
+    /// Class representing the Chili Cheese Fries side
     /// </summary>
     public class ChiliCheeseFries : Side
     {
