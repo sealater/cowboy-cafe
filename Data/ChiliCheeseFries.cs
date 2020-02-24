@@ -51,5 +51,24 @@ namespace CowboyCafe.Data
                 }
             }
         }
+
+        /// <summary>
+        /// Returns string representation of the object
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            switch (Size)
+            {
+                case Size.Small:
+                    return "Small Chili Cheese Fries";
+                case Size.Medium:
+                    return "Medium Chili Cheese Fries";
+                case Size.Large:
+                    return "Large Chili Cheese Fries";
+                default:
+                    throw new NotImplementedException();
+            }
+        }
     }
 }
