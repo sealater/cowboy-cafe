@@ -12,12 +12,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{7243E6B3-87A2-4FAB-B320-77333E841879}"
-	ProjectSection(SolutionItems) = preProject
-		..\..\..\Downloads\Documentation.pdf = ..\..\..\Downloads\Documentation.pdf
-	EndProjectSection
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PointOfSale", "PointOfSale\PointOfSale.csproj", "{B0C1FD5F-CE93-4B6C-BF0B-B8DAE16695AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PointOfSale", "PointOfSale\PointOfSale.csproj", "{B0C1FD5F-CE93-4B6C-BF0B-B8DAE16695AC}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{136F643E-2B61-453A-9894-5CF19D62EDFF}"
+	ProjectSection(SolutionItems) = preProject
+		Documentation\Documentation.pdf = Documentation\Documentation.pdf
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
