@@ -24,6 +24,7 @@ namespace PointOfSale
             InitializeComponent();
         }
 
+        // Event Handlers
         void OnAddAngryChickenButtonClick(object sender, RoutedEventArgs e) { OrderListView.Items.Add(new AngryChicken()); }
         void OnAddCowpokeChiliButtonClick(object sender, RoutedEventArgs e) { OrderListView.Items.Add(new CowpokeChili()); }
         void OnAddDakotaDoubleBurgerButtonClick(object sender, RoutedEventArgs e) { OrderListView.Items.Add(new DakotaDoubleBurger()); }

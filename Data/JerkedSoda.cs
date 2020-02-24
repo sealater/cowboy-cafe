@@ -76,17 +76,45 @@ namespace CowboyCafe.Data
         /// <returns></returns>
         public override string ToString()
         {
+            StringBuilder sb = new StringBuilder();
+
             switch (Size)
             {
                 case Size.Small:
-                    return $"Small {Flavor} Jerked Soda";
+                    sb.Append("Small ");
+                    break;
                 case Size.Medium:
-                    return $"Medium {Flavor} Jerked Soda";
+                    sb.Append("Medium ");
+                    break;
                 case Size.Large:
-                    return $"Large {Flavor} Jerked Soda";
+                    sb.Append("Large ");
+                    break;
                 default:
                     throw new NotImplementedException();
             }
+
+            switch (Flavor)
+            {
+                case SodaFlavor.CreamSoda:
+                    sb.Append("Cream Soda ");
+                    break;
+                case SodaFlavor.OrangeSoda:
+                    sb.Append("Orange Soda ");
+                    break;
+                case SodaFlavor.Sarsparilla:
+                    sb.Append("Sarsparilla ");
+                    break;
+                case SodaFlavor.BirchBeer:
+                    sb.Append("Birch Beer ");
+                    break;
+                case SodaFlavor.RootBeer:
+                    sb.Append("Root Beer ");
+                    break;
+                default:
+                    throw new NotImplementedException();
+            }
+
+            return sb.ToString() + "Jerked Soda";
         }
     }
 }
