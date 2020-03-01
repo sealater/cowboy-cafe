@@ -2,6 +2,7 @@
  * Author: Ethan Davis */
 
 using System;
+using System.Collections.Generic;
 
 namespace CowboyCafe.Data
 {
@@ -52,6 +53,16 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// Special instructions for the preparation of the side
+        /// </summary>
+        public override List<string> SpecialInstructions
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
 
         /// <summary>
         /// Returns string representation of the object
