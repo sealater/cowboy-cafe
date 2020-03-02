@@ -15,23 +15,25 @@
     
     <Grid>
         <StackPanel>
-            <TextBlock>Shopping List</TextBlock>
+            <TextBlock Text="{Binding Path=OrderNumber, StringFormat=Order}" HorizontalAlignment="Center"/>
             <ListBox ItemsSource="{Binding Path=Items}">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
-                            </Grid.ColumnDefinitions>
-                            <TextBlock Text="{Binding}"/>
-                            <Button Grid.Column="1">x</Button>
-                        </Grid>
+                        <StackPanel>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="{Binding}"/>
+                                <TextBlock Text="{Binding Path=Price, StringFormat=c}" Grid.Column="1"/>
+                            </Grid>
+                            <ListView ItemsSource="{Binding Path=SpecialInstructions}"/>
+                        </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
-            
-            <TextBlock Text="{Binding Path=Subtotal, StringFormat=c}"/>
+            <TextBlock Text="{Binding Path=Subtotal, StringFormat=c}" DockPanel.Dock="Bottom"/>
         </StackPanel>
     </Grid>
 </UserControl>

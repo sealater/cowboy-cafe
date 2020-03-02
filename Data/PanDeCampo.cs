@@ -58,7 +58,11 @@ namespace CowboyCafe.Data
         /// </summary>
         public override List<string> SpecialInstructions { 
             get {
-                throw new NotImplementedException();
+                var instructions = new List<string>();
+
+                // None
+
+                return instructions;
             }
         }
 

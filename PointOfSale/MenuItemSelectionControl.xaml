@@ -27,7 +27,7 @@
             <Button Name="AddDakotaDoubleButton" Click="OnAddDakotaDoubleBurgerButtonClick">Dakota Double Burger</Button>
             <Button Name="AddPecosPulledPorkButton" Click="OnAddPecosPulledPorkButtonClick">Pecos Pulled Pork</Button>
             <Button Name="AddRustlersRibsButton" Click="OnAddRustlersRibsButtonClick">Rustler's Ribs</Button>
-            <Button Name="AddTexasTripleBurgerButton" Click="OnAddTexasTeaButtonClick">Texas Triple Burger</Button>
+            <Button Name="AddTexasTripleBurgerButton" Click="OnAddTexasTripleBurgerButtonClick">Texas Triple Burger</Button>
             <Button Name="AddTrailBurgerButton" Click="OnAddTrailBurgerButtonClick">Trail Burger</Button>
         </StackPanel>
 

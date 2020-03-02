@@ -60,7 +60,11 @@ namespace CowboyCafe.Data
         {
             get
             {
-                throw new NotImplementedException();
+                var instructions = new List<string>();
+
+                // None
+
+                return instructions;
             }
         }
 
