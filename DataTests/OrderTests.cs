@@ -4,7 +4,7 @@ using System.Text;
 using System.Linq;
 using Xunit;
 using CowboyCafe.Data;
-/*
+
 namespace CowboyCafe.DataTests.UnitTests
 {
     public class MockOrderItem : IOrderItem
@@ -23,7 +23,7 @@ namespace CowboyCafe.DataTests.UnitTests
         {
             var order = new Order();
             var item = new MockOrderItem();
-            order.Add(item);
+            order.AddItem(item);
             Assert.Contains(item, order.Items);
         }
 
@@ -34,7 +34,7 @@ namespace CowboyCafe.DataTests.UnitTests
         {
             var order = new Order();
             var item = new MockOrderItem();
-            order.Add(item);
+            order.AddItem(item);
             order.Remove(item);
             Assert.DoesNotContain(item, order.Items);
         }
@@ -54,7 +54,7 @@ namespace CowboyCafe.DataTests.UnitTests
             {
                 total += price;
 
-                order.Add(new MockOrderItem()
+                order.AddItem(new MockOrderItem()
                 {
                     Price = price
                 });
@@ -76,7 +76,7 @@ namespace CowboyCafe.DataTests.UnitTests
             var order = new Order();
             foreach (var item in items)
             {
-                order.Add(item);
+                order.AddItem(item);
             }
 
             Assert.Equal(items.Length, order.Items.Count());
@@ -88,4 +88,4 @@ namespace CowboyCafe.DataTests.UnitTests
         }
     }
 }
-*/
+
