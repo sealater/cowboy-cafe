@@ -36,52 +36,52 @@ namespace CowboyCafe.Data
         /// <summary>
         /// If the entree has a bun
         /// </summary>
-        public bool Bun { get; set; } = false;
+        public bool Bun { get; set; } = true;
 
         /// <summary>
         /// If the entree has ketchup
         /// </summary>
-        public bool Ketchup { get; set; } = false;
+        public bool Ketchup { get; set; } = true;
 
         /// <summary>
         /// If the entree has mustard
         /// </summary>
-        public bool Mustard { get; set; } = false;
+        public bool Mustard { get; set; } = true;
 
         /// <summary>
         /// If the entree has pickle
         /// </summary>
-        public bool Pickle { get; set; } = false;
+        public bool Pickle { get; set; } = true;
 
         /// <summary>
         /// If the entree has cheese
         /// </summary>
-        public bool Cheese { get; set; } = false;
+        public bool Cheese { get; set; } = true;
 
         /// <summary>
         /// If the entree has tomato
         /// </summary>
-        public bool Tomato { get; set; } = false;
+        public bool Tomato { get; set; } = true;
 
         /// <summary>
         /// If the entree has lettuce
         /// </summary>
-        public bool Lettuce { get; set; } = false;
+        public bool Lettuce { get; set; } = true;
 
         /// <summary>
         /// If the entree has mayo
         /// </summary>
-        public bool Mayo { get; set; } = false;
+        public bool Mayo { get; set; } = true;
 
         /// <summary>
         /// If the entree has bacon
         /// </summary>
-        public bool Bacon { get; set; } = false;
+        public bool Bacon { get; set; } = true;
 
         /// <summary>
         /// If the entree has egg
         /// </summary>
-        public bool Egg { get; set; } = false;
+        public bool Egg { get; set; } = true;
 
         /// <summary>
         /// Special instructions for the preparation of the entree

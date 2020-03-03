@@ -26,11 +26,11 @@ namespace PointOfSale
         {
             InitializeComponent();
 
-            Order order = new Order();
-
-            order.AddItem(new AngryChicken());
-
-            DataContext = order;
+            DataContext = new Order();
         }
+
+        // Event Handlers
+        void OnCompleteOrderButtonClick(object sender, RoutedEventArgs e) { this.DataContext = new Order(); }
+        void OnCancelOrderButtonClick(object sender, RoutedEventArgs e) { this.DataContext = new Order(); }
     }
 }

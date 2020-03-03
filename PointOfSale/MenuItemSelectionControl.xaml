@@ -21,7 +21,7 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel Grid.Column="0">
-            <TextBlock TextAlignment="Center">Entree</TextBlock>
+            <TextBlock TextAlignment="Center" FontSize="20">Entree</TextBlock>
             <Button Name="AddAngryChickenButton" Click="OnAddAngryChickenButtonClick">Angry Chicken</Button>
             <Button Name="AddCowpokeChiliButton" Click="OnAddCowpokeChiliButtonClick">Cowpoke Chili</Button>
             <Button Name="AddDakotaDoubleButton" Click="OnAddDakotaDoubleBurgerButtonClick">Dakota Double Burger</Button>
@@ -32,7 +32,7 @@
         </StackPanel>
 
         <StackPanel Grid.Column="1">
-            <TextBlock TextAlignment="Center">Sides</TextBlock>
+            <TextBlock TextAlignment="Center" FontSize="20">Sides</TextBlock>
             <Button Name="AddBakedBeansButton" Click="OnAddBakedBeansButtonClick">Baked Beans</Button>
             <Button Name="AddChiliCheeseFriesButton" Click="OnAddChiliCheeseFriesButtonClick">Chili Cheese Fries</Button>
             <Button Name="AddCornDodgersButton" Click="OnAddCornDodgersButtonClick">Corn Dodgers</Button>
@@ -40,7 +40,7 @@
         </StackPanel>
 
         <StackPanel Grid.Column="2">
-            <TextBlock TextAlignment="Center">Drinks</TextBlock>
+            <TextBlock TextAlignment="Center" FontSize="20">Drinks</TextBlock>
             <Button Name="AddCowboyCoffeeButton" Click="OnAddCowboyCoffeeButtonClick">Cowboy Coffee</Button>
             <Button Name="AddJerkedSodaButton" Click="OnAddJerkedSodaButtonClick">Jerked Soda</Button>
             <Button Name="AddTexasTeaButton" Click="OnAddTexasTeaButtonClick">Texas Tea</Button>

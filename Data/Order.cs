@@ -13,8 +13,8 @@ namespace CowboyCafe.Data
         // Record of last Order number
         private static uint lastOrderNumber = 0;
 
-        // Order's OrderNumber identifier
-        public uint OrderNumber { get; }
+        // Order's OrderNumber identifier - Autoincrement
+        public uint OrderNumber { get; } = ++lastOrderNumber;
 
         // Items contained within Order
         private List<IOrderItem> items = new List<IOrderItem>();
@@ -32,8 +32,6 @@ namespace CowboyCafe.Data
                 {
                     subtotal += item.Price;
                 }
-
-                // if Subtotal != subtotal then call PropertyChanged?
 
                 return subtotal;
             }

@@ -20,7 +20,19 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <local:MenuItemSelectionControl Grid.Column="0"></local:MenuItemSelectionControl>
+        <StackPanel Grid.Column="0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Name="ItemSelectionButton" Grid.Column="0">Item Selection</Button>
+                <Button Name="CompleteOrderButton" Grid.Column="1" Click="OnCompleteOrderButtonClick">Complete Order</Button>
+                <Button Name="CancelOrderButton" Grid.Column="2" Click="OnCancelOrderButtonClick">Cancel Order</Button>
+            </Grid>
+            <local:MenuItemSelectionControl Grid.Column="0"></local:MenuItemSelectionControl>
+        </StackPanel>
 
         <local:OrderSummaryControl Grid.Column="3"></local:OrderSummaryControl>
     </Grid>
