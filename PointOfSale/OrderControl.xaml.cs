@@ -29,6 +29,15 @@ namespace PointOfSale
             DataContext = new Order();
         }
 
+        /// <summary>
+        /// Swap child element with given element
+        /// </summary>
+        /// <param name="element"></param>
+        public void SwapScreen(UIElement element)
+        {
+            Container.Child = element;
+        }
+
         // Event Handlers
         void OnCompleteOrderButtonClick(object sender, RoutedEventArgs e) { this.DataContext = new Order(); }
         void OnCancelOrderButtonClick(object sender, RoutedEventArgs e) { this.DataContext = new Order(); }
