@@ -6,7 +6,11 @@
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
+    <StackPanel>
         <TextBlock>Customize Cowpoke Chili</TextBlock>
-    </Grid>
+        <StackPanel Orientation="Horizontal">
+            <Label>Bread</Label>
+            <CheckBox IsChecked="{Binding Path=Bread}"/>
+        </StackPanel>
+    </StackPanel>
 </UserControl>

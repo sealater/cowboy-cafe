@@ -41,5 +41,10 @@ namespace PointOfSale
         // Event Handlers
         void OnCompleteOrderButtonClick(object sender, RoutedEventArgs e) { this.DataContext = new Order(); }
         void OnCancelOrderButtonClick(object sender, RoutedEventArgs e) { this.DataContext = new Order(); }
+
+        private void ItemSelectionButtonClick(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
