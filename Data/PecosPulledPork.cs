@@ -3,6 +3,8 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace CowboyCafe.Data
 {
@@ -11,6 +13,9 @@ namespace CowboyCafe.Data
     /// </summary>
     public class PecosPulledPork : Entree
     {
+        // Property changed event to be bubbled up
+        public override event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// The price of the entree
         /// </summary>
@@ -34,14 +39,24 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// If the entree has bread
+        /// Backing variable for Bread
         /// </summary>
-        public bool Bread { get; set; } = true;
+        private bool _bread = true;
 
         /// <summary>
-        /// If the entree has pickle
+        // If the entree has bread
         /// </summary>
-        public bool Pickle { get; set; } = true;
+        public bool Bread { get => _bread; set { _bread = value; PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Bread")); } }
+
+        /// <summary>
+        /// Backing variable for Pickle
+        /// </summary>
+        private bool _pickle = true;
+
+        /// <summary>
+        // If the entree has pickle
+        /// </summary>
+        public bool Pickle { get => _pickle; set { _pickle = value; PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Pickle")); } }
 
         /// <summary>
         /// Special instructions for the preparation of the entree

@@ -3,6 +3,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace CowboyCafe.Data
@@ -10,12 +11,16 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A base class representing a side
     /// </summary>
-    public abstract class Side : IOrderItem
+    public abstract class Side : IOrderItem, INotifyPropertyChanged
     {
         /// <summary>
-        /// Gets the size of the entree
+        /// Backing variable for Size
         /// </summary>
-        public virtual Size Size { get; set; }
+        private Size _size = Size.Small;
+        /// <summary>
+        /// The drink's size (enum)
+        /// </summary>
+        public Size Size { get => _size; set { _size = value; PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size")); } }
 
         /// <summary>
         /// Gets the price of the side
@@ -31,5 +36,19 @@ namespace CowboyCafe.Data
         /// Special instructions for the preparation of the side
         /// </summary>
         public abstract List<string> SpecialInstructions { get; }
+
+        /// <summary>
+        /// Property changed event
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// Handler for use by sub-classes to override
+        /// </summary>
+        /// <param name="e"></param>
+        protected virtual void OnPropertyChanged(PropertyChangedEventArgs e)
+        {
+            PropertyChanged?.Invoke(this, e);
+        }
     }
 }

@@ -3,6 +3,8 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace CowboyCafe.Data
@@ -12,6 +14,15 @@ namespace CowboyCafe.Data
     /// </summary>
     public class Water : Drink
     {
+        /// <summary>
+        /// Override to handle bubbling of events
+        /// </summary>
+        /// <param name="e"></param>
+        protected override void OnPropertyChanged(PropertyChangedEventArgs e)
+        {
+            base.OnPropertyChanged(e);
+        }
+
         /// <summary>
         /// The price of this Drink
         /// </summary>
@@ -55,9 +66,14 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// Whether to serve with lemon
+        /// Backing variable for Lemon
         /// </summary>
-        public bool Lemon { get; set; } = false;
+        private bool _lemon = false;
+
+        /// <summary>
+        // Whether to serve with lemon
+        /// </summary>
+        public bool Lemon { get => _lemon; set { _lemon = value; OnPropertyChanged(new PropertyChangedEventArgs("Lemon")); } }
 
         /// <summary>
         /// Special instructions for the preparation of this Drink

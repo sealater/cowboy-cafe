@@ -1,4 +1,7 @@
-﻿using System;
+﻿/* ExtensionMethods.cs
+ * Author: Ethan Davis */
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -6,6 +9,9 @@ using System.Windows.Media;
 
 namespace CowboyCafe.Extensions
 {
+    /// <summary>
+    /// Methods to extend functionality
+    /// </summary>
     public static class ExtensionMethods
     {
         /// <summary>

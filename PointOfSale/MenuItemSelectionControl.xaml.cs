@@ -23,6 +23,9 @@ namespace PointOfSale
     /// </summary>
     public partial class MenuItemSelectionControl : UserControl
     {
+        /// <summary>
+        /// Attached OrderControl
+        /// </summary>
         private OrderControl orderControl;
 
         public MenuItemSelectionControl()
@@ -39,72 +42,63 @@ namespace PointOfSale
             {
                 if (sender is Button button)
                 {
+                    IOrderItem item = null;
+                    OrderCustomizeControl screen = new OrderCustomizeControl();
+
                     switch(button.Tag)
                     {
                         case "Angry Chicken":
-                            var entree = new AngryChicken();
-                            var screen = new CustomizeCowpokeChili();
-                            screen.DataContext = entree;
-                            order.AddItem(entree);
-                            orderControl.SwapScreen(screen);
+                            item = new AngryChicken();
                             break;
                         case "Cowpoke Chili":
-                            order.AddItem(new CowpokeChili());
-                            orderControl.SwapScreen(new CustomizeCowpokeChili());
+                            item = new CowpokeChili();
                             break;
                         case "Dakota Double Burger":
-                            order.AddItem(new CowpokeChili());
-                            orderControl.SwapScreen(new CustomizeCowpokeChili());
+                            item = new DakotaDoubleBurger();
                             break;
                         case "Pecos Pulled Pork":
-                            order.AddItem(new CowpokeChili());
-                            orderControl.SwapScreen(new CustomizeCowpokeChili());
+                            item = new PecosPulledPork();
                             break;
                         case "Rustlers Ribs":
-                            order.AddItem(new CowpokeChili());
-                            orderControl.SwapScreen(new CustomizeCowpokeChili());
+                            item = new RustlersRibs();
                             break;
                         case "Texas Triple Burger":
-                            order.AddItem(new CowpokeChili());
-                            orderControl.SwapScreen(new CustomizeCowpokeChili());
+                            item = new TexasTripleBurger();
                             break;
                         case "Trail Burger":
-                            order.AddItem(new CowpokeChili());
-                            orderControl.SwapScreen(new CustomizeCowpokeChili());
+                            item = new TrailBurger();
                             break;
                         case "Baked Beans":
-                            order.AddItem(new CowpokeChili());
-                            orderControl.SwapScreen(new CustomizeCowpokeChili());
+                            item = new BakedBeans();
                             break;
                         case "Chili Cheese Fries":
-                            order.AddItem(new CowpokeChili());
-                            orderControl.SwapScreen(new CustomizeCowpokeChili());
+                            item = new ChiliCheeseFries();
                             break;
                         case "Corn Dodgers":
-                            order.AddItem(new CowpokeChili());
-                            orderControl.SwapScreen(new CustomizeCowpokeChili());
+                            item = new CornDodgers();
                             break;
                         case "Pan de Campo":
-                            order.AddItem(new CowpokeChili());
-                            orderControl.SwapScreen(new CustomizeCowpokeChili());
+                            item = new PanDeCampo();
                             break;
                         case "Cowboy Coffee":
-                            order.AddItem(new CowpokeChili());
-                            orderControl.SwapScreen(new CustomizeCowpokeChili());
+                            item = new CowboyCoffee();
                             break;
                         case "Jerked Soda":
-                            order.AddItem(new CowpokeChili());
-                            orderControl.SwapScreen(new CustomizeCowpokeChili());
+                            item = new JerkedSoda();
                             break;
                         case "Texas Tea":
-                            order.AddItem(new CowpokeChili());
-                            orderControl.SwapScreen(new CustomizeCowpokeChili());
+                            item = new TexasTea();
                             break;
                         case "Water":
-                            order.AddItem(new CowpokeChili());
-                            orderControl.SwapScreen(new CustomizeCowpokeChili());
+                            item = new Water();
                             break;
+                        default:
+                            throw new NotImplementedException();
                     }
+
+                    screen.DataContext = item;
+                    order.AddItem(item);
+                    orderControl.SwapScreen(screen); // Switch screen
                 }
             }
         }

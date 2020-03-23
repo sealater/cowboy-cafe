@@ -3,6 +3,8 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace CowboyCafe.Data
@@ -12,6 +14,15 @@ namespace CowboyCafe.Data
     /// </summary>
     public class JerkedSoda : Drink
     {
+        /// <summary>
+        /// Override to handle bubbling of events
+        /// </summary>
+        /// <param name="e"></param>
+        protected override void OnPropertyChanged(PropertyChangedEventArgs e)
+        {
+            base.OnPropertyChanged(e);
+        }
+
         /// <summary>
         /// The price of this Drink
         /// </summary>
@@ -53,9 +64,14 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
+        /// Backing variable for Flavor
+        /// </summary>
+        private SodaFlavor _flavor;
+
+        /// <summary>
         /// The SodaFlavor (enum) of this Drink
         /// </summary>
-        public SodaFlavor Flavor { get; set; }
+        public SodaFlavor Flavor { get => _flavor; set { _flavor = value; OnPropertyChanged(new PropertyChangedEventArgs("Flavor")); } }
 
         /// <summary>
         /// Special instructions for the preparation of this Drink

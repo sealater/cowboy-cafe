@@ -3,6 +3,8 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace CowboyCafe.Data
 {
@@ -11,6 +13,9 @@ namespace CowboyCafe.Data
     /// </summary>
     public class CowpokeChili : Entree
     {
+        // Property changed event to be bubbled up
+        public override event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// The price of the chili
         /// </summary>
@@ -34,24 +39,45 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
+        /// Backing variable for Cheese
+        /// </summary>
+        private bool _cheese = true;
+
+        /// <summary>
         /// If the chili is topped with cheese
         /// </summary>
-        public bool Cheese { get; set; } = true;
+        public bool Cheese { get => _cheese; set { _cheese = value; PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Cheese")); } }
+
+
+        /// <summary>
+        /// Backing variable for SourCream
+        /// </summary>
+        private bool _sourCream = true;
 
         /// <summary>
         /// If the chili is topped with sour cream
         /// </summary>
-        public bool SourCream { get; set; } = true;
+        public bool SourCream { get => _sourCream; set { _sourCream = value; PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SourCream")); } }
+
+        /// <summary>
+        /// Backing variable for GreenOnions
+        /// </summary>
+        private bool _greenOnions = true;
 
         /// <summary>
         /// If the chili is topped with green onions
         /// </summary>
-        public bool GreenOnions { get; set; } = true;
+        public bool GreenOnions { get => _greenOnions; set { _greenOnions = value; PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("GreenOnions")); } }
+
+        /// <summary>
+        /// Backing variable for TortillaStrips
+        /// </summary>
+        private bool _tortillaStrips = true;
 
         /// <summary>
         /// If the chili is topped with tortilla strips
         /// </summary>
-        public bool TortillaStrips { get; set; } = true;
+        public bool TortillaStrips { get => _tortillaStrips; set { _tortillaStrips = value; PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("TortillaStrips")); } }
 
         /// <summary>
         /// Special instructions for the preparation of the chili

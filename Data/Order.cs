@@ -40,10 +40,18 @@ namespace CowboyCafe.Data
         // Event handler for a property change on Order
         public event PropertyChangedEventHandler PropertyChanged;
 
+        // When a property is changed, update Items and Subtotal as well
+        public void OnPropertyChanged(object sender, PropertyChangedEventArgs propertyChangedEventArgs)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
+        }
+
         // Adds an item to Order
         public void AddItem(IOrderItem item)
         {
             items.Add(item);
+            item.PropertyChanged += OnPropertyChanged;
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
         }
@@ -52,6 +60,7 @@ namespace CowboyCafe.Data
         public void Remove(IOrderItem item)
         {
             items.Remove(item);
+            item.PropertyChanged -= OnPropertyChanged;
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
         }

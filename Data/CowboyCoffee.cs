@@ -3,6 +3,8 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace CowboyCafe.Data
@@ -12,6 +14,15 @@ namespace CowboyCafe.Data
     /// </summary>
     public class CowboyCoffee : Drink
     {
+        /// <summary>
+        /// Override to handle bubbling of events
+        /// </summary>
+        /// <param name="e"></param>
+        protected override void OnPropertyChanged(PropertyChangedEventArgs e)
+        {
+            base.OnPropertyChanged(e);
+        }
+
         /// <summary>
         /// The price of this Drink
         /// </summary>
@@ -55,19 +66,34 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        // Default Ice to false (using new implementation)
+        /// Backing variable for Ice
         /// </summary>
-        public new bool Ice { get; set; } = false;
+        private bool _ice = false;
 
         /// <summary>
-        /// Whether to serve as decaf
+        // Whether to add ice
         /// </summary>
-        public bool Decaf { get; set; } = false;
+        public new bool Ice { get => _ice; set { _ice = value; OnPropertyChanged(new PropertyChangedEventArgs("Ice")); } }
 
         /// <summary>
-        /// Whether to leave room for cream
+        /// Backing variable for Decaf
         /// </summary>
-        public bool RoomForCream { get; set; } = false;
+        private bool _decaf = false;
+
+        /// <summary>
+        // Whether to serve as decaf
+        /// </summary>
+        public bool Decaf { get => _decaf; set { _decaf = value; OnPropertyChanged(new PropertyChangedEventArgs("Decaf")); } }
+
+        /// <summary>
+        /// Backing variable for RoomForCream
+        /// </summary>
+        private bool _roomForCream = false;
+
+        /// <summary>
+        // Whether to serve with room for cream
+        /// </summary>
+        public bool RoomForCream { get => _roomForCream; set { _roomForCream = value; OnPropertyChanged(new PropertyChangedEventArgs("RoomForCream")); } }
 
         /// <summary>
         /// Special instructions for the preparation of this Drink

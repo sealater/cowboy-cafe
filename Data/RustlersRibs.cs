@@ -3,6 +3,8 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace CowboyCafe.Data
 {
@@ -11,6 +13,9 @@ namespace CowboyCafe.Data
     /// </summary>
     public class RustlersRibs : Entree
     {
+        // Property changed event to be bubbled up
+        public override event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// The price of the entree
         /// </summary>

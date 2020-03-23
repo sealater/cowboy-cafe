@@ -3,6 +3,8 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace CowboyCafe.Data
 {
@@ -11,6 +13,15 @@ namespace CowboyCafe.Data
     /// </summary>
     public class ChiliCheeseFries : Side
     {
+        /// <summary>
+        /// Override to handle bubbling of events
+        /// </summary>
+        /// <param name="e"></param>
+        protected override void OnPropertyChanged(PropertyChangedEventArgs e)
+        {
+            base.OnPropertyChanged(e);
+        }
+
         /// <summary>
         /// The price of this side
         /// </summary>

@@ -22,7 +22,7 @@
 
         <StackPanel Grid.Column="0">
             <TextBlock TextAlignment="Center" FontSize="20">Entree</TextBlock>
-            <Button Name="AddAngryChickenButton" Tag="Angry Chicken" Click="OnItemAddButtonClicked">Angry Chicken</Button>
+            <Button Name="AddAngryChickenButton"  Tag="Angry Chicken" Click="OnItemAddButtonClicked">Angry Chicken</Button>
             <Button Name="AddCowpokeChiliButton" Tag="Cowpoke Chili" Click="OnItemAddButtonClicked">Cowpoke Chili</Button>
             <Button Name="AddDakotaDoubleButton" Tag="Dakota Double Burger" Click="OnItemAddButtonClicked">Dakota Double Burger</Button>
             <Button Name="AddPecosPulledPorkButton" Tag="Pecos Pulled Pork" Click="OnItemAddButtonClicked">Pecos Pulled Pork</Button>

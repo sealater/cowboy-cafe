@@ -39,12 +39,17 @@ namespace PointOfSale
         }
 
         // Event Handlers
-        void OnCompleteOrderButtonClick(object sender, RoutedEventArgs e) { this.DataContext = new Order(); }
-        void OnCancelOrderButtonClick(object sender, RoutedEventArgs e) { this.DataContext = new Order(); }
+        void OnCompleteOrderButtonClick(object sender, RoutedEventArgs e) { this.DataContext = new Order(); } // Place holder - creates new Order()
+        void OnCancelOrderButtonClick(object sender, RoutedEventArgs e) { this.DataContext = new Order(); }  // Place holder - creates new Order()
 
+        /// <summary>
+        /// Switch to Item Selection when clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ItemSelectionButtonClick(object sender, RoutedEventArgs e)
         {
-
+            SwapScreen(new MenuItemSelectionControl());
         }
     }
 }

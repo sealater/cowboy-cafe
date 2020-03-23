@@ -3,6 +3,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace CowboyCafe.Data
@@ -10,7 +11,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// Abstract Entree class
     /// </summary>
-    public abstract class Entree : IOrderItem
+    public abstract class Entree : IOrderItem, INotifyPropertyChanged
     {
         /// <summary>
         /// Entree Price
@@ -27,5 +28,10 @@ namespace CowboyCafe.Data
         /// </summary>
         /// <returns></returns>
         public abstract List<string> SpecialInstructions { get; }
+
+        /// <summary>
+        /// Property changed event
+        /// </summary>
+        public abstract event PropertyChangedEventHandler PropertyChanged;
     }
 }

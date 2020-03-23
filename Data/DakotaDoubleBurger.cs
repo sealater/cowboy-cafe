@@ -3,6 +3,8 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace CowboyCafe.Data
 {
@@ -11,6 +13,9 @@ namespace CowboyCafe.Data
     /// </summary>
     public class DakotaDoubleBurger : Entree
     {
+        // Property changed event to be bubbled up
+        public override event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// The price of the entree
         /// </summary>
@@ -34,44 +39,84 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// If the entree has a bun
+        /// Backing variable for Bun
         /// </summary>
-        public bool Bun { get; set; } = true;
+        private bool _bun = true;
 
         /// <summary>
-        /// If the entree has ketchup
+        // If the entree has a bun
         /// </summary>
-        public bool Ketchup { get; set; } = true;
+        public bool Bun { get => _bun; set { _bun = value; PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Bun")); } }
 
         /// <summary>
-        /// If the entree has mustard
+        /// Backing variable for Ketchup
         /// </summary>
-        public bool Mustard { get; set; } = true;
+        private bool _ketchup = true;
 
         /// <summary>
-        /// If the entree has pickle
+        // If the entree has ketchup
         /// </summary>
-        public bool Pickle { get; set; } = true;
+        public bool Ketchup { get => _ketchup; set { _ketchup = value; PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ketchup")); } }
 
         /// <summary>
-        /// If the entree has cheese
+        /// Backing variable for Mustard
         /// </summary>
-        public bool Cheese { get; set; } = true;
+        private bool _mustard = true;
 
         /// <summary>
-        /// If the entree has tomato
+        // If the entree has mustard
         /// </summary>
-        public bool Tomato { get; set; } = true;
+        public bool Mustard { get => _mustard; set { _mustard = value; PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Mustard")); } }
 
         /// <summary>
-        /// If the entree has lettuce
+        /// Backing variable for Pickle
         /// </summary>
-        public bool Lettuce { get; set; } = true;
+        private bool _pickle = true;
 
         /// <summary>
-        /// If the entree has mayo
+        // If the entree has pickle
         /// </summary>
-        public bool Mayo { get; set; } = true;
+        public bool Pickle { get => _pickle; set { _pickle = value; PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Pickle")); } }
+
+        /// <summary>
+        /// Backing variable for Cheese
+        /// </summary>
+        private bool _cheese = true;
+
+        /// <summary>
+        // If the entree has cheese
+        /// </summary>
+        public bool Cheese { get => _cheese; set { _cheese = value; PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Cheese")); } }
+
+        /// <summary>
+        /// Backing variable for Tomato
+        /// </summary>
+        private bool _tomato = true;
+
+        /// <summary>
+        // If the entree has tomato
+        /// </summary>
+        public bool Tomato { get => _tomato; set { _tomato = value; PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Tomato")); } }
+
+        /// <summary>
+        /// Backing variable for Lettuce
+        /// </summary>
+        private bool _lettuce = true;
+
+        /// <summary>
+        // If the entree has lettuce
+        /// </summary>
+        public bool Lettuce { get => _lettuce; set { _lettuce = value; PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Lettuce")); } }
+
+        /// <summary>
+        /// Backing variable for Mayo
+        /// </summary>
+        private bool _mayo = true;
+
+        /// <summary>
+        // If the entree has mayo
+        /// </summary>
+        public bool Mayo { get => _mayo; set { _mayo = value; PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Mayo")); } }
 
         /// <summary>
         /// Special instructions for the preparation of the entree
