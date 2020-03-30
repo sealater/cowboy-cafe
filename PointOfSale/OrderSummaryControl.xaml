@@ -12,30 +12,32 @@
             <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
         </Style>
     </UserControl.Resources>
-    
-    <Grid>
-        <StackPanel>
-            <TextBlock Text="{Binding Path=OrderNumber, StringFormat='Order {0}'}" HorizontalAlignment="Center" FontSize="20"/>
-            <ListBox SelectionChanged="OnListBoxSelectionChanged" ItemsSource="{Binding Path=Items}">
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel>
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition/>
-                                </Grid.ColumnDefinitions>
-                                <TextBlock Text="{Binding}"/>
-                                <TextBlock Text="{Binding Path=Price, StringFormat='Price: {0:c}'}" Grid.Column="1" HorizontalAlignment="Right"/>
-                                <Button Click="OnRemoveButtonClicked" Height="20" Width="20" Grid.Column="2" Background="IndianRed" Foreground="White" FontSize="10px" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">x</Button>
-                            </Grid>
-                            <ListView ItemsSource="{Binding Path=SpecialInstructions}" BorderThickness="0"/>
-                        </StackPanel>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
-            <TextBlock Text="{Binding Path=Subtotal, StringFormat='Subtotal: {0:c}'}" DockPanel.Dock="Bottom"/>
-        </StackPanel>
-    </Grid>
+
+    <ScrollViewer>
+        <Grid>
+            <StackPanel>
+                <TextBlock Text="{Binding Path=OrderNumber, StringFormat='Order {0}'}" HorizontalAlignment="Center" FontSize="20"/>
+                <ListBox SelectionChanged="OnListBoxSelectionChanged" ItemsSource="{Binding Path=Items}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="{Binding}"/>
+                                    <TextBlock Text="{Binding Path=Price, StringFormat='Price: {0:c}'}" Grid.Column="1" HorizontalAlignment="Right"/>
+                                    <Button Click="OnRemoveButtonClicked" Height="20" Width="20" Grid.Column="2" Background="IndianRed" Foreground="White" FontSize="10px" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">x</Button>
+                                </Grid>
+                                <ListView ItemsSource="{Binding Path=SpecialInstructions}" BorderThickness="0"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+                <TextBlock Text="{Binding Path=Subtotal, StringFormat='Subtotal: {0:c}'}" DockPanel.Dock="Bottom"/>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
 </UserControl>

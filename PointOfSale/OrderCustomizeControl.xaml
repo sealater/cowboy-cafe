@@ -10,7 +10,7 @@
     <UserControl.Resources>
         <local:EnumMatchToBooleanConverter x:Key="enumConverter"/>
     </UserControl.Resources>
-    
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -18,35 +18,35 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel Name="ControlPanel">
-            <TextBlock>Modifiers</TextBlock>
+            <TextBlock FontSize="24">Modifiers</TextBlock>
 
-            <CheckBox IsChecked="{Binding Path=Bread}" Loaded="CollapseIfNull">Bread</CheckBox>
+            <CheckBox IsChecked="{Binding Path=Bread}" Loaded="CollapseIfNull" FontSize="16">Bread</CheckBox>
 
-            <CheckBox IsChecked="{Binding Path=Bun}" Loaded="CollapseIfNull">Bun</CheckBox>
-            <CheckBox IsChecked="{Binding Path=Ketchup}" Loaded="CollapseIfNull">Ketchup</CheckBox>
-            <CheckBox IsChecked="{Binding Path=Mustard}" Loaded="CollapseIfNull">Mustard</CheckBox>
-            <CheckBox IsChecked="{Binding Path=Pickle}" Loaded="CollapseIfNull">Pickle</CheckBox>
-            <CheckBox IsChecked="{Binding Path=Cheese}" Loaded="CollapseIfNull">Cheese</CheckBox>
-            <CheckBox IsChecked="{Binding Path=Tomato}" Loaded="CollapseIfNull">Tomato</CheckBox>
-            <CheckBox IsChecked="{Binding Path=Lettuce}" Loaded="CollapseIfNull">Lettuce</CheckBox>
-            <CheckBox IsChecked="{Binding Path=Mayo}" Loaded="CollapseIfNull">Mayo</CheckBox>
-            <CheckBox IsChecked="{Binding Path=Bacon}" Loaded="CollapseIfNull">Bacon</CheckBox>
-            <CheckBox IsChecked="{Binding Path=Egg}" Loaded="CollapseIfNull">Egg</CheckBox>
+            <CheckBox IsChecked="{Binding Path=Bun}" Loaded="CollapseIfNull" FontSize="16">Bun</CheckBox>
+            <CheckBox IsChecked="{Binding Path=Ketchup}" Loaded="CollapseIfNull" FontSize="16">Ketchup</CheckBox>
+            <CheckBox IsChecked="{Binding Path=Mustard}" Loaded="CollapseIfNull" FontSize="16">Mustard</CheckBox>
+            <CheckBox IsChecked="{Binding Path=Pickle}" Loaded="CollapseIfNull" FontSize="16">Pickle</CheckBox>
+            <CheckBox IsChecked="{Binding Path=Cheese}" Loaded="CollapseIfNull" FontSize="16">Cheese</CheckBox>
+            <CheckBox IsChecked="{Binding Path=Tomato}" Loaded="CollapseIfNull" FontSize="16">Tomato</CheckBox>
+            <CheckBox IsChecked="{Binding Path=Lettuce}" Loaded="CollapseIfNull" FontSize="16">Lettuce</CheckBox>
+            <CheckBox IsChecked="{Binding Path=Mayo}" Loaded="CollapseIfNull" FontSize="16">Mayo</CheckBox>
+            <CheckBox IsChecked="{Binding Path=Bacon}" Loaded="CollapseIfNull" FontSize="16">Bacon</CheckBox>
+            <CheckBox IsChecked="{Binding Path=Egg}" Loaded="CollapseIfNull" FontSize="16">Egg</CheckBox>
 
-            <CheckBox IsChecked="{Binding Path=SourCream}" Loaded="CollapseIfNull">Sour Cream</CheckBox>
-            <CheckBox IsChecked="{Binding Path=GreenOnions}" Loaded="CollapseIfNull">Green Onions</CheckBox>
-            <CheckBox IsChecked="{Binding Path=TortillaStrips}" Loaded="CollapseIfNull">Tortilla Strips</CheckBox>
+            <CheckBox IsChecked="{Binding Path=SourCream}" Loaded="CollapseIfNull" FontSize="16">Sour Cream</CheckBox>
+            <CheckBox IsChecked="{Binding Path=GreenOnions}" Loaded="CollapseIfNull" FontSize="16">Green Onions</CheckBox>
+            <CheckBox IsChecked="{Binding Path=TortillaStrips}" Loaded="CollapseIfNull" FontSize="16">Tortilla Strips</CheckBox>
 
-            <CheckBox IsChecked="{Binding Path=Ice}" Loaded="CollapseIfNull">Ice</CheckBox>
-            <CheckBox IsChecked="{Binding Path=Decaf}" Loaded="CollapseIfNull">Decaf</CheckBox>
-            <CheckBox IsChecked="{Binding Path=RoomForCream}" Loaded="CollapseIfNull">Room For Cream</CheckBox>
+            <CheckBox IsChecked="{Binding Path=Ice}" Loaded="CollapseIfNull" FontSize="16">Ice</CheckBox>
+            <CheckBox IsChecked="{Binding Path=Decaf}" Loaded="CollapseIfNull" FontSize="16">Decaf</CheckBox>
+            <CheckBox IsChecked="{Binding Path=RoomForCream}" Loaded="CollapseIfNull" FontSize="16">Room For Cream</CheckBox>
 
-            <CheckBox IsChecked="{Binding Path=Sweet}" Loaded="CollapseIfNull">Sweet</CheckBox>
-            <CheckBox IsChecked="{Binding Path=Lemon}" Loaded="CollapseIfNull">Lemon</CheckBox>
+            <CheckBox IsChecked="{Binding Path=Sweet}" Loaded="CollapseIfNull" FontSize="16">Sweet</CheckBox>
+            <CheckBox IsChecked="{Binding Path=Lemon}" Loaded="CollapseIfNull" FontSize="16">Lemon</CheckBox>
         </StackPanel>
 
-         <StackPanel Grid.Column="1">
-            <TextBlock>Size and/or Flavor</TextBlock>
+        <StackPanel Grid.Column="1">
+            <TextBlock FontSize="24">Size and/or Flavor</TextBlock>
 
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -54,7 +54,7 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                
+
                 <RadioButton Content="Small" GroupName="Size" Grid.Column="0" IsChecked="{Binding Path=Size, Mode=TwoWay,
                 Converter={StaticResource enumConverter}, ConverterParameter=Small}" Loaded="CollapseIfNull"/>
 
@@ -67,26 +67,27 @@
 
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
+                    <ColumnDefinition Width="13*"/>
+                    <ColumnDefinition Width="67*"/>
+                    <ColumnDefinition Width="80*"/>
+                    <ColumnDefinition Width="80*"/>
+                    <ColumnDefinition Width="80*"/>
+                    <ColumnDefinition Width="80*"/>
                 </Grid.ColumnDefinitions>
 
                 <RadioButton Content="Cream Soda" GroupName="Flavor" Grid.Column="0" IsChecked="{Binding Path=Flavor, Mode=TwoWay,
-                Converter={StaticResource enumConverter}, ConverterParameter=CreamSoda}" Loaded="CollapseIfNull"/>
+                Converter={StaticResource enumConverter}, ConverterParameter=CreamSoda}" Loaded="CollapseIfNull" Grid.ColumnSpan="2"/>
 
-                <RadioButton Content="Orange Soda" GroupName="Flavor" Grid.Column="1" IsChecked="{Binding Path=Flavor, Mode=TwoWay,
+                <RadioButton Content="Orange Soda" GroupName="Flavor" Grid.Column="2" IsChecked="{Binding Path=Flavor, Mode=TwoWay,
                 Converter={StaticResource enumConverter}, ConverterParameter=OrangeSoda}" Loaded="CollapseIfNull"/>
 
-                <RadioButton Content="Sarsparilla" GroupName="Flavor" Grid.Column="2" IsChecked="{Binding Path=Flavor, Mode=TwoWay,
+                <RadioButton Content="Sarsparilla" GroupName="Flavor" Grid.Column="3" IsChecked="{Binding Path=Flavor, Mode=TwoWay,
                 Converter={StaticResource enumConverter}, ConverterParameter=Sarsparilla}" Loaded="CollapseIfNull"/>
 
-                <RadioButton Content="Birch Beer" GroupName="Flavor" Grid.Column="3" IsChecked="{Binding Path=Flavor, Mode=TwoWay,
+                <RadioButton Content="Birch Beer" GroupName="Flavor" Grid.Column="4" IsChecked="{Binding Path=Flavor, Mode=TwoWay,
                 Converter={StaticResource enumConverter}, ConverterParameter=BirchBeer}" Loaded="CollapseIfNull"/>
 
-                <RadioButton Content="Root Beer" GroupName="Flavor" Grid.Column="4" IsChecked="{Binding Path=Flavor, Mode=TwoWay,
+                <RadioButton Content="Root Beer" GroupName="Flavor" Grid.Column="5" IsChecked="{Binding Path=Flavor, Mode=TwoWay,
                 Converter={StaticResource enumConverter}, ConverterParameter=RootBeer}" Loaded="CollapseIfNull"/>
             </Grid>
 
