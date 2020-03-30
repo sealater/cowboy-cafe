@@ -15,15 +15,6 @@ namespace CowboyCafe.Data
     public class JerkedSoda : Drink
     {
         /// <summary>
-        /// Override to handle bubbling of events
-        /// </summary>
-        /// <param name="e"></param>
-        protected override void OnPropertyChanged(PropertyChangedEventArgs e)
-        {
-            base.OnPropertyChanged(e);
-        }
-
-        /// <summary>
         /// The price of this Drink
         /// </summary>
         public override double Price {
@@ -71,7 +62,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The SodaFlavor (enum) of this Drink
         /// </summary>
-        public SodaFlavor Flavor { get => _flavor; set { _flavor = value; OnPropertyChanged(new PropertyChangedEventArgs("Flavor")); } }
+        public SodaFlavor Flavor { get => _flavor; set { _flavor = value; InvokePropertyChanged("Flavor"); } }
 
         /// <summary>
         /// Special instructions for the preparation of this Drink

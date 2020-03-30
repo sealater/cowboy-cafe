@@ -13,9 +13,6 @@ namespace CowboyCafe.Data
     /// </summary>
     public class TrailBurger : Entree
     {
-        // Property changed event to be bubbled up
-        public override event PropertyChangedEventHandler PropertyChanged;
-
         /// <summary>
         /// The price of the entree
         /// </summary>
@@ -46,7 +43,7 @@ namespace CowboyCafe.Data
         /// <summary>
         // If the entree has a bun
         /// </summary>
-        public bool Bun { get => _bun; set { _bun = value; PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Bun")); } }
+        public bool Bun { get => _bun; set { _bun = value; InvokePropertyChanged("Bun"); InvokePropertyChanged("SpecialInstructions"); } }
 
         /// <summary>
         /// Backing variable for Ketchup
@@ -56,7 +53,7 @@ namespace CowboyCafe.Data
         /// <summary>
         // If the entree has ketchup
         /// </summary>
-        public bool Ketchup { get => _ketchup; set { _ketchup = value; PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ketchup")); } }
+        public bool Ketchup { get => _ketchup; set { _ketchup = value; InvokePropertyChanged("Ketchup"); InvokePropertyChanged("SpecialInstructions"); } }
 
         /// <summary>
         /// Backing variable for Mustard
@@ -66,7 +63,7 @@ namespace CowboyCafe.Data
         /// <summary>
         // If the entree has mustard
         /// </summary>
-        public bool Mustard { get => _mustard; set { _mustard = value; PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Mustard")); } }
+        public bool Mustard { get => _mustard; set { _mustard = value; InvokePropertyChanged("Mustard"); InvokePropertyChanged("SpecialInstructions"); } }
 
         /// <summary>
         /// Backing variable for Pickle
@@ -76,7 +73,7 @@ namespace CowboyCafe.Data
         /// <summary>
         // If the entree has pickle
         /// </summary>
-        public bool Pickle { get => _pickle; set { _pickle = value; PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Pickle")); } }
+        public bool Pickle { get => _pickle; set { _pickle = value; InvokePropertyChanged("Pickle"); InvokePropertyChanged("SpecialInstructions"); } }
 
         /// <summary>
         /// Backing variable for Cheese
@@ -86,7 +83,7 @@ namespace CowboyCafe.Data
         /// <summary>
         // If the entree has cheese
         /// </summary>
-        public bool Cheese { get => _cheese; set { _cheese = value; PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Cheese")); } }
+        public bool Cheese { get => _cheese; set { _cheese = value; InvokePropertyChanged("Cheese"); InvokePropertyChanged("SpecialInstructions"); } }
 
         /// <summary>
         /// Special instructions for the preparation of the entree

@@ -1,4 +1,4 @@
-﻿/* AngryChicken.cs
+﻿/* PecosPulledPork.cs
  * Author: Ethan Davis */
 
 using System;
@@ -9,13 +9,10 @@ using System.Runtime.CompilerServices;
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// A class representing the Angry Chicken entree
+    /// A class representing the Pecos Pulled Pork entree
     /// </summary>
-    public class AngryChicken : Entree, INotifyPropertyChanged
+    public class PecosPulledPork : Entree
     {
-        // Property changed event to be bubbled up
-        public override event PropertyChangedEventHandler PropertyChanged;
-
         /// <summary>
         /// The price of the entree
         /// </summary>
@@ -23,7 +20,7 @@ namespace CowboyCafe.Data
         {
             get
             {
-                return 5.99;
+                return 5.88;
             }
         }
 
@@ -34,7 +31,7 @@ namespace CowboyCafe.Data
         {
             get
             {
-                return 190;
+                return 528;
             }
         }
 
@@ -44,9 +41,9 @@ namespace CowboyCafe.Data
         private bool _bread = true;
 
         /// <summary>
-        /// If the entree has bread
+        // If the entree has bread
         /// </summary>
-        public bool Bread { get => _bread; set { _bread = value; PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Bread")); } }
+        public bool Bread { get => _bread; set { _bread = value; InvokePropertyChanged("Bread"); InvokePropertyChanged("SpecialInstructions"); } }
 
         /// <summary>
         /// Backing variable for Pickle
@@ -54,9 +51,9 @@ namespace CowboyCafe.Data
         private bool _pickle = true;
 
         /// <summary>
-        /// If the entree has pickles
+        // If the entree has pickle
         /// </summary>
-        public bool Pickle { get => _pickle; set { _pickle = value; PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Pickle")); } }
+        public bool Pickle { get => _pickle; set { _pickle = value; InvokePropertyChanged("Pickle"); InvokePropertyChanged("SpecialInstructions"); } }
 
         /// <summary>
         /// Special instructions for the preparation of the entree
@@ -80,7 +77,7 @@ namespace CowboyCafe.Data
         /// <returns></returns>
         public override string ToString()
         {
-            return "Angry Chicken";
+            return "Pecos Pulled Pork";
         }
     }
 }

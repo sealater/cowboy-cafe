@@ -13,9 +13,6 @@ namespace CowboyCafe.Data
     /// </summary>
     public class CowpokeChili : Entree
     {
-        // Property changed event to be bubbled up
-        public override event PropertyChangedEventHandler PropertyChanged;
-
         /// <summary>
         /// The price of the chili
         /// </summary>
@@ -46,7 +43,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// If the chili is topped with cheese
         /// </summary>
-        public bool Cheese { get => _cheese; set { _cheese = value; PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Cheese")); } }
+        public bool Cheese { get => _cheese; set { _cheese = value; InvokePropertyChanged("Cheese"); InvokePropertyChanged("SpecialInstructions"); } }
 
 
         /// <summary>
@@ -57,7 +54,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// If the chili is topped with sour cream
         /// </summary>
-        public bool SourCream { get => _sourCream; set { _sourCream = value; PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SourCream")); } }
+        public bool SourCream { get => _sourCream; set { _sourCream = value; InvokePropertyChanged("SourCream"); InvokePropertyChanged("SpecialInstructions"); } }
 
         /// <summary>
         /// Backing variable for GreenOnions
@@ -67,7 +64,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// If the chili is topped with green onions
         /// </summary>
-        public bool GreenOnions { get => _greenOnions; set { _greenOnions = value; PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("GreenOnions")); } }
+        public bool GreenOnions { get => _greenOnions; set { _greenOnions = value; InvokePropertyChanged("GreenOnions"); InvokePropertyChanged("SpecialInstructions"); } }
 
         /// <summary>
         /// Backing variable for TortillaStrips
@@ -77,7 +74,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// If the chili is topped with tortilla strips
         /// </summary>
-        public bool TortillaStrips { get => _tortillaStrips; set { _tortillaStrips = value; PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("TortillaStrips")); } }
+        public bool TortillaStrips { get => _tortillaStrips; set { _tortillaStrips = value; InvokePropertyChanged("TortillaStrips"); InvokePropertyChanged("SpecialInstructions"); } }
 
         /// <summary>
         /// Special instructions for the preparation of the chili

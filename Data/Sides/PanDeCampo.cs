@@ -1,4 +1,4 @@
-﻿/* ChiliCheeseFries.cs
+﻿/* PanDeCampo.cs
  * Author: Ethan Davis */
 
 using System;
@@ -9,19 +9,10 @@ using System.Runtime.CompilerServices;
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// Class representing the Chili Cheese Fries side
+    /// Class representing the Pan de Campo side
     /// </summary>
-    public class ChiliCheeseFries : Side
+    public class PanDeCampo : Side
     {
-        /// <summary>
-        /// Override to handle bubbling of events
-        /// </summary>
-        /// <param name="e"></param>
-        protected override void OnPropertyChanged(PropertyChangedEventArgs e)
-        {
-            base.OnPropertyChanged(e);
-        }
-
         /// <summary>
         /// The price of this side
         /// </summary>
@@ -32,11 +23,11 @@ namespace CowboyCafe.Data
                 switch (Size)
                 {
                     case Size.Small:
-                        return 1.99;
+                        return 1.59;
                     case Size.Medium:
-                        return 2.99;
+                        return 1.79;
                     case Size.Large:
-                        return 3.99;
+                        return 1.99;
                     default:
                         throw new NotImplementedException();
                 }
@@ -53,11 +44,11 @@ namespace CowboyCafe.Data
                 switch (Size)
                 {
                     case Size.Small:
-                        return 433;
+                        return 227;
                     case Size.Medium:
-                        return 524;
+                        return 269;
                     case Size.Large:
-                        return 610;
+                        return 367;
                     default:
                         throw new NotImplementedException();
                 }
@@ -67,10 +58,8 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Special instructions for the preparation of the side
         /// </summary>
-        public override List<string> SpecialInstructions
-        {
-            get
-            {
+        public override List<string> SpecialInstructions { 
+            get {
                 var instructions = new List<string>();
 
                 // None
@@ -88,11 +77,11 @@ namespace CowboyCafe.Data
             switch (Size)
             {
                 case Size.Small:
-                    return "Small Chili Cheese Fries";
+                    return "Small Pan de Campo";
                 case Size.Medium:
-                    return "Medium Chili Cheese Fries";
+                    return "Medium Pan de Campo";
                 case Size.Large:
-                    return "Large Chili Cheese Fries";
+                    return "Large Pan de Campo";
                 default:
                     throw new NotImplementedException();
             }

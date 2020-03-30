@@ -1,29 +1,21 @@
-﻿/* CornDodgers.cs
+﻿/* TexasTea.cs
  * Author: Ethan Davis */
 
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Text;
 
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// Class representing the Corn Dodgers side
+    /// Class describing the TexasTea Drink
     /// </summary>
-    public class CornDodgers : Side
+    public class TexasTea : Drink
     {
         /// <summary>
-        /// Override to handle bubbling of events
-        /// </summary>
-        /// <param name="e"></param>
-        protected override void OnPropertyChanged(PropertyChangedEventArgs e)
-        {
-            base.OnPropertyChanged(e);
-        }
-
-        /// <summary>
-        /// The price of this side
+        /// The price of this Drink
         /// </summary>
         public override double Price
         {
@@ -32,11 +24,11 @@ namespace CowboyCafe.Data
                 switch (Size)
                 {
                     case Size.Small:
-                        return 1.59;
+                        return 1.00;
                     case Size.Medium:
-                        return 1.79;
+                        return 1.50;
                     case Size.Large:
-                        return 1.99;
+                        return 2.00;
                     default:
                         throw new NotImplementedException();
                 }
@@ -44,7 +36,7 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// The calorie content of this side
+        /// The calorie content of this Drink
         /// </summary>
         public override uint Calories
         {
@@ -53,11 +45,11 @@ namespace CowboyCafe.Data
                 switch (Size)
                 {
                     case Size.Small:
-                        return 512;
+                        if (Sweet) { return 10; } else { return 5; }
                     case Size.Medium:
-                        return 685;
+                        if (Sweet) { return 22; } else { return 11; }
                     case Size.Large:
-                        return 717;
+                        if (Sweet) { return 36; } else { return 18; }
                     default:
                         throw new NotImplementedException();
                 }
@@ -65,7 +57,27 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// Special instructions for the preparation of the side
+        /// Backing variable for Sweet
+        /// </summary>
+        private bool _sweet = true;
+
+        /// <summary>
+        // Whether to serve sweet
+        /// </summary>
+        public bool Sweet { get => _sweet; set { _sweet = value; InvokePropertyChanged("Sweet"); } }
+
+        /// <summary>
+        /// Backing variable for Lemon
+        /// </summary>
+        private bool _lemon = false;
+
+        /// <summary>
+        // Whether to serve with lemon
+        /// </summary>
+        public bool Lemon { get => _lemon; set { _lemon = value; InvokePropertyChanged("Lemon"); InvokePropertyChanged("SpecialInstructions"); } }
+
+        /// <summary>
+        /// Special instructions for the preparation of this Drink
         /// </summary>
         public override List<string> SpecialInstructions
         {
@@ -73,7 +85,8 @@ namespace CowboyCafe.Data
             {
                 var instructions = new List<string>();
 
-                // None
+                if (!Ice) instructions.Add("Hold Ice");
+                if (Lemon) instructions.Add("Add Lemon");
 
                 return instructions;
             }
@@ -88,11 +101,14 @@ namespace CowboyCafe.Data
             switch (Size)
             {
                 case Size.Small:
-                    return "Small Corn Dodgers";
+                    if (Sweet) { return "Small Texas Sweet Tea"; }
+                    else { return "Small Texas Plain Tea"; }
                 case Size.Medium:
-                    return "Medium Corn Dodgers";
+                    if (Sweet) { return "Medium Texas Sweet Tea"; }
+                    else { return "Medium Texas Plain Tea"; }
                 case Size.Large:
-                    return "Large Corn Dodgers";
+                    if (Sweet) { return "Large Texas Sweet Tea"; }
+                    else { return "Large Texas Plain Tea"; }
                 default:
                     throw new NotImplementedException();
             }

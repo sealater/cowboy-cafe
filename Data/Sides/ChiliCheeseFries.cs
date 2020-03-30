@@ -1,4 +1,4 @@
-﻿/* BakedBeans.cs
+﻿/* ChiliCheeseFries.cs
  * Author: Ethan Davis */
 
 using System;
@@ -9,19 +9,10 @@ using System.Runtime.CompilerServices;
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// Class representing the Baked Beans side
+    /// Class representing the Chili Cheese Fries side
     /// </summary>
-    public class BakedBeans : Side
+    public class ChiliCheeseFries : Side
     {
-        /// <summary>
-        /// Override to handle bubbling of events
-        /// </summary>
-        /// <param name="e"></param>
-        protected override void OnPropertyChanged(PropertyChangedEventArgs e)
-        {
-            base.OnPropertyChanged(e);
-        }
-
         /// <summary>
         /// The price of this side
         /// </summary>
@@ -32,11 +23,11 @@ namespace CowboyCafe.Data
                 switch (Size)
                 {
                     case Size.Small:
-                        return 1.59;
-                    case Size.Medium:
-                        return 1.79;
-                    case Size.Large:
                         return 1.99;
+                    case Size.Medium:
+                        return 2.99;
+                    case Size.Large:
+                        return 3.99;
                     default:
                         throw new NotImplementedException();
                 }
@@ -53,11 +44,11 @@ namespace CowboyCafe.Data
                 switch (Size)
                 {
                     case Size.Small:
-                        return 312;
+                        return 433;
                     case Size.Medium:
-                        return 378;
+                        return 524;
                     case Size.Large:
-                        return 410;
+                        return 610;
                     default:
                         throw new NotImplementedException();
                 }
@@ -88,11 +79,11 @@ namespace CowboyCafe.Data
             switch (Size)
             {
                 case Size.Small:
-                    return "Small Baked Beans";
+                    return "Small Chili Cheese Fries";
                 case Size.Medium:
-                    return "Medium Baked Beans";
+                    return "Medium Chili Cheese Fries";
                 case Size.Large:
-                    return "Large Baked Beans";
+                    return "Large Chili Cheese Fries";
                 default:
                     throw new NotImplementedException();
             }

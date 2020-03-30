@@ -32,6 +32,15 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Property changed event
         /// </summary>
-        public abstract event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// Helper method to trigger PropertyChanged events
+        /// </summary>
+        /// <param name="propertyName"></param>
+        protected void InvokePropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 }

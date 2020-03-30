@@ -1,4 +1,4 @@
-﻿/* PanDeCampo.cs
+﻿/* BakedBeans.cs
  * Author: Ethan Davis */
 
 using System;
@@ -9,19 +9,10 @@ using System.Runtime.CompilerServices;
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// Class representing the Pan de Campo side
+    /// Class representing the Baked Beans side
     /// </summary>
-    public class PanDeCampo : Side
+    public class BakedBeans : Side
     {
-        /// <summary>
-        /// Override to handle bubbling of events
-        /// </summary>
-        /// <param name="e"></param>
-        protected override void OnPropertyChanged(PropertyChangedEventArgs e)
-        {
-            base.OnPropertyChanged(e);
-        }
-
         /// <summary>
         /// The price of this side
         /// </summary>
@@ -53,11 +44,11 @@ namespace CowboyCafe.Data
                 switch (Size)
                 {
                     case Size.Small:
-                        return 227;
+                        return 312;
                     case Size.Medium:
-                        return 269;
+                        return 378;
                     case Size.Large:
-                        return 367;
+                        return 410;
                     default:
                         throw new NotImplementedException();
                 }
@@ -67,8 +58,10 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Special instructions for the preparation of the side
         /// </summary>
-        public override List<string> SpecialInstructions { 
-            get {
+        public override List<string> SpecialInstructions
+        {
+            get
+            {
                 var instructions = new List<string>();
 
                 // None
@@ -86,11 +79,11 @@ namespace CowboyCafe.Data
             switch (Size)
             {
                 case Size.Small:
-                    return "Small Pan de Campo";
+                    return "Small Baked Beans";
                 case Size.Medium:
-                    return "Medium Pan de Campo";
+                    return "Medium Baked Beans";
                 case Size.Large:
-                    return "Large Pan de Campo";
+                    return "Large Baked Beans";
                 default:
                     throw new NotImplementedException();
             }

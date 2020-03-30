@@ -15,15 +15,6 @@ namespace CowboyCafe.Data
     public class CowboyCoffee : Drink
     {
         /// <summary>
-        /// Override to handle bubbling of events
-        /// </summary>
-        /// <param name="e"></param>
-        protected override void OnPropertyChanged(PropertyChangedEventArgs e)
-        {
-            base.OnPropertyChanged(e);
-        }
-
-        /// <summary>
         /// The price of this Drink
         /// </summary>
         public override double Price
@@ -73,7 +64,7 @@ namespace CowboyCafe.Data
         /// <summary>
         // Whether to add ice
         /// </summary>
-        public new bool Ice { get => _ice; set { _ice = value; OnPropertyChanged(new PropertyChangedEventArgs("Ice")); } }
+        public new bool Ice { get => _ice; set { _ice = value; InvokePropertyChanged("Ice"); InvokePropertyChanged("SpecialInstructions"); } }
 
         /// <summary>
         /// Backing variable for Decaf
@@ -83,7 +74,7 @@ namespace CowboyCafe.Data
         /// <summary>
         // Whether to serve as decaf
         /// </summary>
-        public bool Decaf { get => _decaf; set { _decaf = value; OnPropertyChanged(new PropertyChangedEventArgs("Decaf")); } }
+        public bool Decaf { get => _decaf; set { _decaf = value; InvokePropertyChanged("Decaf"); InvokePropertyChanged("SpecialInstructions"); } }
 
         /// <summary>
         /// Backing variable for RoomForCream
@@ -93,7 +84,7 @@ namespace CowboyCafe.Data
         /// <summary>
         // Whether to serve with room for cream
         /// </summary>
-        public bool RoomForCream { get => _roomForCream; set { _roomForCream = value; OnPropertyChanged(new PropertyChangedEventArgs("RoomForCream")); } }
+        public bool RoomForCream { get => _roomForCream; set { _roomForCream = value; InvokePropertyChanged("RoomForCream"); InvokePropertyChanged("SpecialInstructions"); } }
 
         /// <summary>
         /// Special instructions for the preparation of this Drink

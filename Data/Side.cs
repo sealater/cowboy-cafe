@@ -20,7 +20,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The drink's size (enum)
         /// </summary>
-        public Size Size { get => _size; set { _size = value; PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size")); } }
+        public Size Size { get => _size; set { _size = value; InvokePropertyChanged("Size"); InvokePropertyChanged("Calories"); InvokePropertyChanged("Price"); } }
 
         /// <summary>
         /// Gets the price of the side
@@ -43,12 +43,12 @@ namespace CowboyCafe.Data
         public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
-        /// Handler for use by sub-classes to override
+        /// Helper method to trigger PropertyChanged events
         /// </summary>
-        /// <param name="e"></param>
-        protected virtual void OnPropertyChanged(PropertyChangedEventArgs e)
+        /// <param name="propertyName"></param>
+        protected void InvokePropertyChanged(string propertyName)
         {
-            PropertyChanged?.Invoke(this, e);
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
