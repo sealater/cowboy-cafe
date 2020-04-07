@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using CashRegister;
 using CowboyCafe.Data;
 
 namespace PointOfSale
@@ -39,7 +40,14 @@ namespace PointOfSale
         }
 
         // Event Handlers
-        void OnCompleteOrderButtonClick(object sender, RoutedEventArgs e) { this.DataContext = new Order(); } // Place holder - creates new Order()
+        void OnCompleteOrderButtonClick(object sender, RoutedEventArgs e) 
+        {
+            if (DataContext is Order order) {
+                order.CashReceived = new CashReceived();
+                SwapScreen(new TransactionControl());
+            }
+            
+        }
         void OnCancelOrderButtonClick(object sender, RoutedEventArgs e) { this.DataContext = new Order(); }  // Place holder - creates new Order()
 
         /// <summary>

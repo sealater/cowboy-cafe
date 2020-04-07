@@ -31,8 +31,8 @@
                 <Button Name="CompleteOrderButton" Grid.Column="1" Click="OnCompleteOrderButtonClick">Complete Order</Button>
                 <Button Name="CancelOrderButton" Grid.Column="2" Click="OnCancelOrderButtonClick">Cancel Order</Button>
             </Grid>
-            <Border Name="Container" Grid.Column="0">
-                <local:MenuItemSelectionControl Grid.Column="0" Grid.Row="1"></local:MenuItemSelectionControl>
+            <Border Name="Container" Grid.Column="0" Height="Auto">
+                <local:MenuItemSelectionControl Height="Auto" Grid.Column="0" Grid.Row="1"></local:MenuItemSelectionControl>
             </Border>
         </StackPanel>
 

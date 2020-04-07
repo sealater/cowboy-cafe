@@ -1,6 +1,7 @@
 ﻿/* Order.cs
  * Author: Ethan Davis */
 
+using CashRegister;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,6 +11,16 @@ namespace CowboyCafe.Data
 {
     public class Order : INotifyPropertyChanged
     {
+        /// <summary>
+        /// Static instance of CashDrawer to be used for orders
+        /// </summary>
+        public static CashDrawer CashDrawer = new CashDrawer();
+
+        /// <summary>
+        /// Static instance of ReceiptPrinter to be used for orders
+        /// </summary>
+        public static ReceiptPrinter ReceiptPrinter = new ReceiptPrinter();
+
         // Record of last Order number
         private static uint lastOrderNumber = 0;
 
@@ -22,7 +33,14 @@ namespace CowboyCafe.Data
         // Public accessor for Order items
         public IEnumerable<IOrderItem> Items { get => items.ToArray(); }
 
-        // Order subtotal
+        /// <summary>
+        /// Cash received for this current order
+        /// </summary>
+        public CashReceived CashReceived { get; set; }
+
+        /// <summary>
+        /// Order subtotal
+        /// </summary>
         public double Subtotal { 
             get
             {
@@ -36,6 +54,11 @@ namespace CowboyCafe.Data
                 return subtotal;
             }
         }
+
+        /// <summary>
+        /// Order total
+        /// </summary>
+        public double Total { get => Subtotal * 1.16; }
 
         // Event handler for a property change on Order
         public event PropertyChangedEventHandler PropertyChanged;
